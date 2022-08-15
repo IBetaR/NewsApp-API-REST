@@ -29,7 +29,7 @@ public class Author extends Base{
     private LocalDate createdAt;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "source_id")
+    @JoinColumn(name = "fk_source")
     private Source source;
 
 }

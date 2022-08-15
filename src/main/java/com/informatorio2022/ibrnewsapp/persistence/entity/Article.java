@@ -38,7 +38,7 @@ public class Article extends Base{
     private boolean published;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "author_id")
+    @JoinColumn(name = "fk_author")
     private Author author;
 
 }

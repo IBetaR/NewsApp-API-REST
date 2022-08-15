@@ -37,7 +37,7 @@ public abstract class BaseControllerImpl<E extends Base, S extends
         try {
             return ResponseEntity.status(HttpStatus.OK).body(service.findById(id));
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"Error\":\"Error Por favor intente mas tarde.\"}");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"NOT_FOUND\":\"Recurso no encontrado en la base de datos, revise la request.\"}");
         }
     }
 
@@ -46,7 +46,7 @@ public abstract class BaseControllerImpl<E extends Base, S extends
         try {
             return ResponseEntity.status(HttpStatus.OK).body(service.save(entity));
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"Error\":\"Error Por favor revise la request.\"}");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"BAD REQUEST\":\"Error Por favor revise la request.\"}");
         }
     }
 
@@ -55,7 +55,7 @@ public abstract class BaseControllerImpl<E extends Base, S extends
         try {
             return ResponseEntity.status(HttpStatus.OK).body(service.update(id, entity));
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"Error\":\"Error Por favor revise la request.\"}");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"BAD REQUEST\":\"Error Por favor revise la request.\"}");
         }
     }
 
@@ -64,7 +64,7 @@ public abstract class BaseControllerImpl<E extends Base, S extends
         try {
             return ResponseEntity.status(HttpStatus.NO_CONTENT).body(service.delete(id));
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"Error\":\"Error Por favor revise la request.\"}");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"BAD REQUEST\":\"Error Por favor revise la request.\"}");
         }
     }
 }
