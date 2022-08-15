@@ -23,7 +23,7 @@ public class ArticleServiceImpl extends BaseServiceImpl<Article, Long> implement
     @Override
     public List<Article> search(String filter) throws Exception{
         try {
-            List<Article> articles = articleRepository.findByTitleContainingOrContentContaining(filter,filter);
+            List<Article> articles = articleRepository.findByTitleContainingOrDescriptionContaining(filter,filter);
             //List<Article> articles = articleRepository.search(filter);
             //List<Article> articles = articleRepository.searchNative(filter);
             return articles;
@@ -35,7 +35,7 @@ public class ArticleServiceImpl extends BaseServiceImpl<Article, Long> implement
     @Override
     public Page<Article> search(String filter, Pageable pageable) throws Exception {
         try {
-            Page<Article> articles = articleRepository.findByTitleContainingOrContentContaining(filter,filter, pageable);
+            Page<Article> articles = articleRepository.findByTitleContainingOrDescriptionContaining(filter,filter, pageable);
             //Page<Article> articles = articleRepository.search(filter, pageable);
             //Page<Article> articles = articleRepository.searchNative(filter, pageable);
             return articles;

@@ -12,8 +12,8 @@ import java.util.List;
 @Repository
 public interface ArticleRepository extends BaseRepository <Article, Long> {
 
-    List<Article> findByTitleContainingOrContentContaining(String title, String content);
-    Page<Article> findByTitleContainingOrContentContaining(String name, String word, Pageable pageable);
+    List<Article> findByTitleContainingOrDescriptionContaining(String title, String description);
+    Page<Article> findByTitleContainingOrDescriptionContaining(String name, String description, Pageable pageable);
 
 //
 //    @Query("SELECT a FROM Article a WHERE a.title LIKE %:filter% or a.content LIKE %:filter%")
