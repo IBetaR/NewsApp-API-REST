@@ -1,9 +1,11 @@
 package com.informatorio2022.ibrnewsapp.service;
 
+import com.informatorio2022.ibrnewsapp.exceptions.NewsAppExceptions;
 import com.informatorio2022.ibrnewsapp.persistence.entity.Base;
 import com.informatorio2022.ibrnewsapp.persistence.repository.BaseRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
@@ -43,12 +45,16 @@ public abstract class BaseServiceImpl<E extends Base, ID extends Serializable> i
     @Override
     @Transactional
     public E findById(ID id) throws Exception {
-        try {
-            Optional<E> entityOptional = baseRepository.findById(id);
-            return entityOptional.get();
-        } catch (Exception e) {
-            throw new Exception(e.getMessage());
+        Optional<E> optionalE =this.baseRepository.findById(id);
+        if(!optionalE.isEmpty()){
+            try {
+                Optional<E> entityOptional = baseRepository.findById(id);
+                return entityOptional.get();
+            } catch (Exception e) {
+                throw new Exception(e.getMessage());
+            }
         }
+        throw new NewsAppExceptions("ID que usted busca no existe en la Base de Datos", HttpStatus.NOT_FOUND);
     }
 
     @Override

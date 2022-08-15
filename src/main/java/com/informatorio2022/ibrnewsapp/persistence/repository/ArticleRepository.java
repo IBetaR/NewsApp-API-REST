@@ -15,6 +15,7 @@ public interface ArticleRepository extends BaseRepository <Article, Long> {
     List<Article> findByTitleContainingOrDescriptionContaining(String title, String description);
     Page<Article> findByTitleContainingOrDescriptionContaining(String name, String description, Pageable pageable);
 
+
 //
 //    @Query("SELECT a FROM Article a WHERE a.title LIKE %:filter% or a.content LIKE %:filter%")
 //    List<Article> search(@Param("filter") String filter); *****
