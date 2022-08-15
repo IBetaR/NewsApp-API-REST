@@ -95,8 +95,6 @@ public abstract class BaseServiceImpl<E extends Base, ID extends Serializable> i
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
-
     }
-
 }
 

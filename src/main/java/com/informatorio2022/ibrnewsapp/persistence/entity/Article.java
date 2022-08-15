@@ -34,11 +34,12 @@ public class Article extends Base{
     @Column(name = "content", length = 1500)
     private String content;
 
-    @Column(name = "published")
-    private boolean published;
-
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_author")
     private Author author;
+
+    @Column(name = "article_status")
+    private ArticleStatus articleStatus;
+
 
 }

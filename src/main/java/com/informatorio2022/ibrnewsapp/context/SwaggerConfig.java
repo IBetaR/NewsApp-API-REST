@@ -15,6 +15,7 @@ import java.util.Collections;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
+
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -29,7 +30,7 @@ public class SwaggerConfig {
         return new ApiInfo(
                 "NewsApp API",
                 "News searcher App - Final Informatorio Java Project",
-                "v1",
+                "v2",
                 "Public and educative use ",
                 new Contact("Ilich Betancourt Rangel", "www.example.com", "ilichbr@gmail.com"),
                 "Public API", "API license URL", Collections.emptyList());

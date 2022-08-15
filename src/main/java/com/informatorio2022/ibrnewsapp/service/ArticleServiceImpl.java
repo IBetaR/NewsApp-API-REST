@@ -2,6 +2,7 @@ package com.informatorio2022.ibrnewsapp.service;
 
 import com.informatorio2022.ibrnewsapp.exceptions.NewsAppExceptions;
 import com.informatorio2022.ibrnewsapp.persistence.entity.Article;
+import com.informatorio2022.ibrnewsapp.persistence.entity.ArticleStatus;
 import com.informatorio2022.ibrnewsapp.persistence.repository.ArticleRepository;
 import com.informatorio2022.ibrnewsapp.persistence.repository.BaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,5 +52,9 @@ public class ArticleServiceImpl extends BaseServiceImpl<Article, Long> implement
             }
         }
         throw new  NewsAppExceptions("Verifique criterio de búsqueda, debe ser mayor o igual a 3 caracteres ", HttpStatus.NO_CONTENT);
+    }
+
+    public List<Article> findAllByArticleStatus(ArticleStatus articleStatus){
+        return this.articleRepository.findAllByArticleStatus(articleStatus);
     }
 }

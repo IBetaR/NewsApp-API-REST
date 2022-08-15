@@ -1,5 +1,6 @@
 package com.informatorio2022.ibrnewsapp.persistence.entity;
 
+import com.sun.istack.NotNull;
 import lombok.*;
 
 import javax.persistence.*;
@@ -14,9 +15,11 @@ import java.time.LocalDate;
 public class Source extends Base {
 
     @Column(name = "name")
+    @NotNull
     private String name;
 
     @Column(name = "code")
+    @NotNull
     private String code;
 
     @Column(name = "createdAt")

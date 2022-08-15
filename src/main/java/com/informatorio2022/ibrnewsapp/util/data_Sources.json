@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Mundodeportivo.com",
+    "code": "Mundodeportivo",
+    "createdAt": "2022-08-15"
+  },
+  {
+    "name": "La Nacion",
+    "code": "la-nacion",
+    "createdAt": "2022-08-15"
+  },
+  {
+    "name": "Sputniknews.lat",
+    "code": "Sputniknews-lat",
+    "createdAt": "2022-08-15"
+  },
+  {
+    "name": "Futbol.com.uy",
+    "code": "Futbol-com-uy",
+    "createdAt": "2022-08-15"
+  },
+  {
+    "name": "Clarín.com",
+    "code": "Clarin",
+    "createdAt": "2022-08-15"
+  },
+  {
+    "name": "Montevideo.com.uy",
+    "code": "Montevideo-com-uy",
+    "createdAt": "2022-08-15"
+  },
+  {
+    "name": "Rusia_Today",
+    "code": "RT",
+    "createdAt": "2022-08-15"
+  },
+  {
+    "name": "Ctxt.es",
+    "code": "Ctxt.es",
+    "createdAt": "2022-08-15"
+  }
+]

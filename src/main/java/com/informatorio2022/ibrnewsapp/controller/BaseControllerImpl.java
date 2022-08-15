@@ -3,6 +3,7 @@ package com.informatorio2022.ibrnewsapp.controller;
 import com.informatorio2022.ibrnewsapp.exceptions.NewsAppExceptions;
 import com.informatorio2022.ibrnewsapp.persistence.entity.Base;
 import com.informatorio2022.ibrnewsapp.service.BaseServiceImpl;
+import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -43,7 +44,7 @@ public abstract class BaseControllerImpl<E extends Base, S extends
     }
 
     @PostMapping("")
-    public ResponseEntity<?> save(@RequestBody E entity){
+    public ResponseEntity<?> save(@RequestBody @NotNull E entity){
         try {
             return ResponseEntity.status(HttpStatus.OK).body(service.save(entity));
         } catch (Exception e) {
@@ -52,7 +53,7 @@ public abstract class BaseControllerImpl<E extends Base, S extends
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody E entity){
+    public ResponseEntity<?> update(@PathVariable @NotNull Long id, @RequestBody E entity){
         try {
             return ResponseEntity.status(HttpStatus.OK).body(service.update(id, entity));
         } catch (Exception e) {

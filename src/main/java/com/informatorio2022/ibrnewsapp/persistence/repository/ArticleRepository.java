@@ -1,6 +1,7 @@
 package com.informatorio2022.ibrnewsapp.persistence.repository;
 
 import com.informatorio2022.ibrnewsapp.persistence.entity.Article;
+import com.informatorio2022.ibrnewsapp.persistence.entity.ArticleStatus;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
@@ -14,6 +15,7 @@ public interface ArticleRepository extends BaseRepository <Article, Long> {
 
     List<Article> findByTitleContainingOrDescriptionContaining(String title, String description);
     Page<Article> findByTitleContainingOrDescriptionContaining(String name, String description, Pageable pageable);
+    public List<Article>  findAllByArticleStatus(ArticleStatus articleStatus);
 
 
 //
