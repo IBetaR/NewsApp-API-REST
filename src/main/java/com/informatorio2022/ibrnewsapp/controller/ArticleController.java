@@ -12,23 +12,21 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/newsapp/articles")
 public class ArticleController extends BaseControllerImpl <Article, ArticleServiceImpl> {
 
+    @GetMapping("search")
+    public ResponseEntity<?> search(@RequestParam String filter){
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(service.search(filter));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"Error\":\""+e.getMessage()+ ", Búsqueda no encontrada.\"}");
+        }
+    }
 
-
-//    @GetMapping("search")
-//    public ResponseEntity<?> search(@RequestParam String filter){
-//        try {
-//            return ResponseEntity.status(HttpStatus.OK).body(service.search(filter));
-//        } catch (Exception e) {
-//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"Error\":\""+e.getMessage()+ ", Búsqueda no encontrada.\"}");
-//        }
-//    }
-//
-//    @GetMapping("searchPaged")
-//    public ResponseEntity<?> search(@RequestParam String filter, Pageable pageable){
-//        try {
-//            return ResponseEntity.status(HttpStatus.OK).body(service.search(filter, pageable));
-//        } catch (Exception e) {
-//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"Error\":\""+e.getMessage()+ ", Búsqueda no encontrada.\"}");
-//        }
-//    }
+    @GetMapping("searchPaged")
+    public ResponseEntity<?> search(@RequestParam String filter, Pageable pageable){
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(service.search(filter, pageable));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"Error\":\""+e.getMessage()+ ", Búsqueda no encontrada.\"}");
+        }
+    }
 }

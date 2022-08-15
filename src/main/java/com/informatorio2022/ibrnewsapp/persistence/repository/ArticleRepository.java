@@ -12,11 +12,12 @@ import java.util.List;
 @Repository
 public interface ArticleRepository extends BaseRepository <Article, Long> {
 
-//    List<Article> findByNameContainingOrWordContaining(String name, String word);
-//    Page<Article> findByNameContainingOrWordContaining(String name, String word, Pageable pageable);
+    List<Article> findByTitleContainingOrContentContaining(String title, String content);
+    Page<Article> findByTitleContainingOrContentContaining(String name, String word, Pageable pageable);
+
 //
-//    @Query("SELECT a FROM Article a WHERE a.name LIKE %:filter% or a.word LIKE %:filter%")
-//    List<Article> search(@Param("filter") String filter);
+//    @Query("SELECT a FROM Article a WHERE a.title LIKE %:filter% or a.content LIKE %:filter%")
+//    List<Article> search(@Param("filter") String filter); *****
 //
 //    @Query("SELECT a FROM Article a WHERE a.name LIKE %:filter% or a.word LIKE %:filter%")
 //    Page<Article> search(@Param("filter") String filter, Pageable pageable);

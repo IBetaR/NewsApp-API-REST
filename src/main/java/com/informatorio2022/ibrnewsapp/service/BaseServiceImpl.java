@@ -84,7 +84,7 @@ public abstract class BaseServiceImpl<E extends Base, ID extends Serializable> i
                 baseRepository.deleteById(id);
                 return true;
             } else {
-                throw new Exception();
+                throw new Exception("ID No existe");
             }
         } catch (Exception e) {
             throw new Exception(e.getMessage());

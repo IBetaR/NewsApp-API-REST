@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface ArticleService extends BaseService <Article, Long>{
 
-//    List<Article> search(String filter) throws Exception;
-//    Page<Article> search(String filter, Pageable pageable) throws Exception;
+    List<Article> search(String filter) throws Exception;
+    Page<Article> search(String filter, Pageable pageable) throws Exception;
 }

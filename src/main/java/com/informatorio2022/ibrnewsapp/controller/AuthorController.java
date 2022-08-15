@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/api/v1/newsapp/authors")
-public class AuthorController extends BaseControllerImpl<Author, AuthorServiceImpl>{
+public class AuthorController extends BaseControllerImpl<Author, AuthorServiceImpl> {
 
     @GetMapping("search")
     public ResponseEntity<?> search(@RequestParam String filter){
         try {
             return ResponseEntity.status(HttpStatus.OK).body(service.search(filter));
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"Error\":\""+e.getMessage()+ ", Búsqueda no encontrada.\"}");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"Error, NOT FOUND\":\""+e.getMessage()+ ", Búsqueda no encontrada.\"}");
         }
     }
 
@@ -26,7 +26,7 @@ public class AuthorController extends BaseControllerImpl<Author, AuthorServiceIm
         try {
             return ResponseEntity.status(HttpStatus.OK).body(service.search(filter, pageable));
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"Error\":\""+e.getMessage()+ ", Búsqueda no encontrada.\"}");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"Error, NOT FOUND\":\""+e.getMessage()+ ", Páginas y búsqueda no encontrada.\"}");
         }
     }
 

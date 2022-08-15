@@ -20,27 +20,27 @@ public class ArticleServiceImpl extends BaseServiceImpl<Article, Long> implement
         super(baseRepository);
     }
 
-//    @Override
-//    public List<Article> search(String filter) throws Exception{
-//        try {
-//            //List<Article> articles = articleRepository.findByNameContainingOrWordContaining(filter,filter);
-//            //List<Article> articles = articleRepository.search(filter);
-//            List<Article> articles = articleRepository.searchNative(filter);
-//            return articles;
-//        } catch (Exception e) {
-//            throw new Exception(e.getMessage());
-//        }
-//    }
-//
-//    @Override
-//    public Page<Article> search(String filter, Pageable pageable) throws Exception {
-//        try {
-//            //Page<Article> articles = articleRepository.findByNameContainingOrWordContaining(filter,filter, pageable);
-//            //Page<Article> articles = articleRepository.search(filter, pageable);
-//            Page<Article> articles = articleRepository.searchNative(filter, pageable);
-//            return articles;
-//        } catch (Exception e) {
-//            throw new Exception(e.getMessage());
-//        }
-//    }
+    @Override
+    public List<Article> search(String filter) throws Exception{
+        try {
+            List<Article> articles = articleRepository.findByTitleContainingOrContentContaining(filter,filter);
+            //List<Article> articles = articleRepository.search(filter);
+            //List<Article> articles = articleRepository.searchNative(filter);
+            return articles;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+
+    @Override
+    public Page<Article> search(String filter, Pageable pageable) throws Exception {
+        try {
+            Page<Article> articles = articleRepository.findByTitleContainingOrContentContaining(filter,filter, pageable);
+            //Page<Article> articles = articleRepository.search(filter, pageable);
+            //Page<Article> articles = articleRepository.searchNative(filter, pageable);
+            return articles;
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
 }
