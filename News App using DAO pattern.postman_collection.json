@@ -1,0 +1,878 @@
+{
+	"info": {
+		"_postman_id": "422466a3-6cea-4aa8-9127-bcba1fa14b29",
+		"name": "News App using DAO pattern",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20453419"
+	},
+	"item": [
+		{
+			"name": "Articles Requests",
+			"item": [
+				{
+					"name": "Get All Articles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/articles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Paged Articles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/articles/paged?page=0&size=3&sort=name,desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"articles",
+								"paged"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "3"
+								},
+								{
+									"key": "sort",
+									"value": "id,asc",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "name,desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One Article",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/articles/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"articles",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Article",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "J",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Novak Djokovic, confirmado como gran rival de España en Valencia\",\r\n    \"description\": \"&lt;b&gt;España y Serbia&lt;/b&gt; serán los principales candidatos del Grupo B de la Copa Davis que se disputará en el &lt;b&gt;Pabellón Municipal de Fuente de San Luis de Valencia&lt;/b&gt; del 13 al 18 de septiembre.\",\r\n    \"url\": \"https://www.mundodeportivo.com/tenis/copa-davis/20220815/1001851421/novak-djokovic-confirmado-gran-rival-espana-valencia.html\",\r\n    \"urlToImage\": \"https://www.mundodeportivo.com/files/og_thumbnail/uploads/2022/05/15/6281248c99cdc.jpeg\",\r\n    \"publishedAt\": \"2022-08-15T18:42:38Z\",\r\n    \"content\": \"España y Serbia serán los principales candidatos del Grupo B de la Copa Davis que se disputará en el Pabellón Municipal de Fuente de San Luis de Valencia del 13 al 18 de septiembre.\\r\\nSi ya lo eran un… [+2990 chars]\",\r\n    \"author\": {\r\n        \"firstname\": \"Manuel\",\r\n        \"lastname\": \"Fernández\",\r\n        \"fullname\": \"Manuel Ángel Fernández Rigueira\",\r\n        \"createdAt\": \"2022-08-15\",\r\n        \"source\": {\r\n            \"id\": 1,\r\n            \"name\": \"Mundodeportivo.com\",\r\n            \"code\": \"Mundodeportivo\",\r\n            \"createdAt\": \"2022-08-15\"\r\n        }\r\n    },\r\n    \"articleStatus\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/articles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Article 2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "J",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Elecciones en Estados (des)Unidos y en crisis\",\r\n    \"description\": \"Además de las instituciones, son las prácticas políticas que hoy se han roto en EE.UU., como la tolerancia y la contención institucional (o la decisión de hacer menos de lo que la ley permite), haciendo que el sistema constitucional de controles y equilibrios…\",\r\n    \"url\": \"https://www.elmostrador.cl/noticias/opinion/2022/07/23/elecciones-en-un-estados-des-unidos-y-en-crisis/\",\r\n    \"urlToImage\": \"https://www.elmostrador.cl/media/2021/08/2021-08-17T225924Z_1_LYNXMPEH7G14S_RTROPTP_4_AFGANISTAN-BIDEN-700x477.jpg\",\r\n    \"publishedAt\": \"2022-07-23T01:02:00Z\",\r\n    \"content\": \"Este 8 de noviembre se llevarán a cabo las elecciones intermedias en EE.UU., unos comicios que se celebran cada dos años y/o a la mitad del mandato presidencial. Son elecciones cruciales en el rumbo … [+19331 chars]\",\r\n    \"author\": {\r\n        \"createdAt\": \"2022-07-20\",\r\n        \"firstname\": \"Ilich\",\r\n        \"fullname\": \"Ilich Betancourt\",\r\n        \"lastname\": \"Betancourt\",\r\n        \"source\": {\r\n            \"id\": 1,\r\n            \"name\": \"CNN.com\",\r\n            \"code\": \"CNN_ES\",\r\n            \"createdAt\": \"2022-07-20\"\r\n        }\r\n    }\r\n\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/articles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Article 3",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "J",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Elecciones en Estados (des)Unidos y en crisis\",\r\n    \"description\": \"Además de las instituciones, son las prácticas políticas que hoy se han roto en EE.UU., como la tolerancia y la contención institucional (o la decisión de hacer menos de lo que la ley permite), haciendo que el sistema constitucional de controles y equilibrios…\",\r\n    \"url\": \"https://www.elmostrador.cl/noticias/opinion/2022/07/23/elecciones-en-un-estados-des-unidos-y-en-crisis/\",\r\n    \"urlToImage\": \"https://www.elmostrador.cl/media/2021/08/2021-08-17T225924Z_1_LYNXMPEH7G14S_RTROPTP_4_AFGANISTAN-BIDEN-700x477.jpg\",\r\n    \"publishedAt\": \"2022-07-23T01:02:00Z\",\r\n    \"content\": \"Este 8 de noviembre se llevarán a cabo las elecciones intermedias en EE.UU., unos comicios que se celebran cada dos años y/o a la mitad del mandato presidencial. Son elecciones cruciales en el rumbo … [+19331 chars]\",\r\n    \"author\": {\r\n        \"createdAt\": \"2022-07-20\",\r\n        \"firstname\": \"Ilich\",\r\n        \"fullname\": \"Ilich Betancourt\",\r\n        \"lastname\": \"Betancourt\",\r\n        \"source\": {\r\n            \"id\": 1,\r\n            \"name\": \"CNN.com\",\r\n            \"code\": \"CNN_ES\",\r\n            \"createdAt\": \"2022-07-20\"\r\n        }\r\n    }\r\n\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/articles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Article",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 7,\r\n    \"title\": \"Prueba\",\r\n    \"description\": \"Prueba Update\",\r\n    \"url\": null,\r\n    \"urlToImage\": \"null\",\r\n    \"publishedAt\": null,\r\n    \"content\": null,\r\n    \"published\": false,\r\n    \"author\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/articles/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"articles",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Article",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/personas/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Article",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/articles/search?filter=y",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"articles",
+								"search"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "y"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Articles Paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/articles/searchPaged?filter=España&page=1&size=5&sort=id,desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"articles",
+								"searchPaged"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "España"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "id,desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Articles By Status PUBLISHED",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/articles/status/PUBLISHED",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"articles",
+								"status",
+								"PUBLISHED"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Articles By Status DRAFT",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/articles/status/DRAFT",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"articles",
+								"status",
+								"DRAFT"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Autores Requests",
+			"item": [
+				{
+					"name": "Get All Authors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/authors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One Autor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/authors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"authors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Autor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "J",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"createdAt\": \"2022-07-20\",\r\n    \"firstname\": \"string\",\r\n    \"fullname\": \"string\",\r\n    \"lastname\": \"string\",\r\n    \"source\": \r\n        {\r\n            \"id\": 3,\r\n            \"name\": \"Europapress.es\",\r\n            \"code\": \"https://www.europapress.es\",\r\n            \"createdAt\": \"2022-07-20\"\r\n        }\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/authors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Autor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Ilich\",\r\n    \"lastname\": \"Betancourt Rangel\",\r\n    \"biography\": \"Ingeniero Mecánico nació el 30/03/86 en Barinas, Venezuela\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/authors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"authors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Autor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/authors/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"authors",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Authors  Firstname or Lastname",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/authors/search?filter=i",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"authors",
+								"search"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "i"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Authors Paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/authors/searchPaged?filter=P&page=0&size=5&sort=id,desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"authors",
+								"searchPaged"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "P"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "id,desc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sources Requests",
+			"item": [
+				{
+					"name": "Get All Sources",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/sources",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"sources"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One Source",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/sources/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"sources",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Source",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "J",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"CNN_ES\",\r\n    \"createdAt\": \"2022-07-20T15:50:10Z\",\r\n    \"name\": \"CNN.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/sources",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"sources"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Source 2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "J",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"CNN_ES\",\r\n    \"createdAt\": \"2022-07-20T15:50:10Z\",\r\n    \"name\": \"CNN.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/sources",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"sources"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Source",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"name\": \"CNN.com/ESPANOL\",\r\n    \"code\": \"CNN_ES\",\r\n    \"createdAt\": \"2022-07-21\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/sources/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"sources",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Source",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/sources/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"sources",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Sources by Name or Code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/sources/search?filter=i",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"sources",
+								"search"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "i"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Sources Paged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/newsapp/sources/searchPaged?filter=P&page=0&size=5&sort=id,desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"newsapp",
+								"sources",
+								"searchPaged"
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "P"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "id,desc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
