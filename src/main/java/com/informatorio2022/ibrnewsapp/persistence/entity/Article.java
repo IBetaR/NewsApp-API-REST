@@ -3,6 +3,9 @@ package com.informatorio2022.ibrnewsapp.persistence.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +19,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class Article extends Base{
 
+    @NotBlank(message = "Debe tener un título")
     @Column(name = "title")
     private String title;
 

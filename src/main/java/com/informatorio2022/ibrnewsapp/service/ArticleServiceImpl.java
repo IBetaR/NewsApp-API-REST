@@ -3,6 +3,7 @@ package com.informatorio2022.ibrnewsapp.service;
 import com.informatorio2022.ibrnewsapp.exceptions.NewsAppExceptions;
 import com.informatorio2022.ibrnewsapp.persistence.entity.Article;
 import com.informatorio2022.ibrnewsapp.persistence.entity.ArticleStatus;
+import com.informatorio2022.ibrnewsapp.persistence.entity.Author;
 import com.informatorio2022.ibrnewsapp.persistence.repository.ArticleRepository;
 import com.informatorio2022.ibrnewsapp.persistence.repository.BaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.time.ZonedDateTime;
 import java.util.List;
 
 @Service
@@ -30,7 +32,6 @@ public class ArticleServiceImpl extends BaseServiceImpl<Article, Long> implement
                 List<Article> articles = articleRepository.findByTitleContainingOrDescriptionContaining(filter,filter);
                 //List<Article> articles = articleRepository.search(filter);
                 //List<Article> articles = articleRepository.searchNative(filter);
-
                 return articles;
             } catch (Exception e) {
                 throw new Exception(e.getMessage());
@@ -57,4 +58,5 @@ public class ArticleServiceImpl extends BaseServiceImpl<Article, Long> implement
     public List<Article> findAllByArticleStatus(ArticleStatus articleStatus){
         return this.articleRepository.findAllByArticleStatus(articleStatus);
     }
+
 }

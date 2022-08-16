@@ -13,4 +13,5 @@ public interface ArticleService extends BaseService <Article, Long>{
     List<Article> findAllByArticleStatus(ArticleStatus articleStatus) throws Exception;
     Page<Article> search(String filter, Pageable pageable) throws Exception;
 
+
 }

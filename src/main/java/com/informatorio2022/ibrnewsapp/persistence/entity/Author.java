@@ -6,6 +6,9 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
 @Entity
@@ -16,6 +19,8 @@ import java.time.LocalDate;
 @RequiredArgsConstructor
 public class Author extends Base{
 
+    @NotBlank(message = "Nombre no debe estar vacío")
+    @Size(min = 3)
     @Column(name = "firstname")
     private String firstname;
 

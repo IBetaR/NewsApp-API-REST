@@ -8,13 +8,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.NotBlank;
+
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/api/v1/newsapp/sources")
 public class SourceController extends BaseControllerImpl<Source, SourceServiceImpl>{
 
     @GetMapping("search")
-    @NotNull
+    @NotBlank
     public ResponseEntity<?> search(@RequestParam String filter){
         try {
             return ResponseEntity.status(HttpStatus.OK).body(service.search(filter));
@@ -24,7 +26,7 @@ public class SourceController extends BaseControllerImpl<Source, SourceServiceIm
     }
 
     @GetMapping("searchPaged")
-    @NotNull
+    @NotBlank
     public ResponseEntity<?> search(@RequestParam String filter, Pageable pageable){
         try {
             return ResponseEntity.status(HttpStatus.OK).body(service.search(filter, pageable));
