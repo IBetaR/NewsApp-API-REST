@@ -9,7 +9,6 @@ import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
 @MappedSuperclass
-//@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

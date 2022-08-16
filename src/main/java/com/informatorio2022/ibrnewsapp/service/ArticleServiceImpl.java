@@ -3,7 +3,6 @@ package com.informatorio2022.ibrnewsapp.service;
 import com.informatorio2022.ibrnewsapp.exceptions.NewsAppExceptions;
 import com.informatorio2022.ibrnewsapp.persistence.entity.Article;
 import com.informatorio2022.ibrnewsapp.persistence.entity.ArticleStatus;
-import com.informatorio2022.ibrnewsapp.persistence.entity.Author;
 import com.informatorio2022.ibrnewsapp.persistence.repository.ArticleRepository;
 import com.informatorio2022.ibrnewsapp.persistence.repository.BaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;

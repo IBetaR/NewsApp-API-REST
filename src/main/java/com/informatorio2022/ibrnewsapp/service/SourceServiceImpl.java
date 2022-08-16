@@ -1,6 +1,5 @@
 package com.informatorio2022.ibrnewsapp.service;
 
-import com.informatorio2022.ibrnewsapp.persistence.entity.Article;
 import com.informatorio2022.ibrnewsapp.persistence.entity.Source;
 import com.informatorio2022.ibrnewsapp.persistence.repository.BaseRepository;
 import com.informatorio2022.ibrnewsapp.persistence.repository.SourceRepository;

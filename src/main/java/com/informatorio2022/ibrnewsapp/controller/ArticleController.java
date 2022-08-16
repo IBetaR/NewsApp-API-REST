@@ -4,14 +4,13 @@ import com.informatorio2022.ibrnewsapp.exceptions.NewsAppExceptions;
 import com.informatorio2022.ibrnewsapp.persistence.entity.Article;
 import com.informatorio2022.ibrnewsapp.persistence.entity.ArticleStatus;
 import com.informatorio2022.ibrnewsapp.service.ArticleServiceImpl;
-import com.sun.istack.NotNull;
+
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 @RestController
