@@ -39,4 +39,24 @@ public class IbrnewsAppSmokeTest {
     void SmokeTestSourceContextLoads() throws Exception{
         assertThat(sourceController).isNotNull();
     }
+
+    @Test
+    @DisplayName("NewsApp ArticleController has Not Null Fields Or Properties")
+    void SmokeTestArticleSourceContext() throws Exception{
+        assertThat(articleController).hasNoNullFieldsOrProperties();
+    }
+
+
+    @Test
+    @DisplayName("NewsApp AuthorController has Not Null Fields Or Properties")
+    void SmokeTestAuthorSourceContext() throws Exception{
+        assertThat(authorController).hasNoNullFieldsOrProperties();
+    }
+
+    @Test
+    @DisplayName("NewsApp SourceController has Not Null Fields Or Properties")
+    void SmokeTestSourceContext() throws Exception{
+        assertThat(sourceController).hasNoNullFieldsOrProperties();
+    }
+
 }

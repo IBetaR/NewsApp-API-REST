@@ -47,4 +47,11 @@ public class ArticleController extends BaseControllerImpl <Article, ArticleServi
         }
     }
 
+    @RequestMapping("/greeting")
+    public @ResponseBody String SearchGreeting(){
+        return "Esta es la ruta de ArticleController";
+    }
+
+
+
 }
