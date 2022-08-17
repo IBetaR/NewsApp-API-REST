@@ -46,4 +46,5 @@ public class ArticleController extends BaseControllerImpl <Article, ArticleServi
             throw new NewsAppExceptions("Verifique request, Status debe estar en Mayúscula y sin espacios ",HttpStatus.BAD_REQUEST);
         }
     }
+
 }
