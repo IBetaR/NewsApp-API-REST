@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 
 @Entity
@@ -12,7 +13,10 @@ public class NewsPortalCompany {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Debe tener un nombre")
     private String name;
+
+    @NotBlank(message = "Debe tener un CUIT")
     private String cuit;
 
     public NewsPortalCompany() {

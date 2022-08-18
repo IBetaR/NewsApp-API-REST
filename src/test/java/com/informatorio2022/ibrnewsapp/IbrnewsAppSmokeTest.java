@@ -2,6 +2,7 @@ package com.informatorio2022.ibrnewsapp;
 
 import com.informatorio2022.ibrnewsapp.controller.ArticleController;
 import com.informatorio2022.ibrnewsapp.controller.AuthorController;
+import com.informatorio2022.ibrnewsapp.controller.NewsPortalCompanyController;
 import com.informatorio2022.ibrnewsapp.controller.SourceController;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -22,6 +23,10 @@ public class IbrnewsAppSmokeTest {
     @Autowired
     private SourceController sourceController;
 
+    @Autowired
+    private NewsPortalCompanyController companyController;
+
+
     @Test
     @DisplayName("NewsApp ArticleController Smoke test")
     void SmokeTestArticleContextLoads() throws Exception{
@@ -32,6 +37,12 @@ public class IbrnewsAppSmokeTest {
     @DisplayName("NewsApp AuthorController Smoke test")
     void SmokeTestAuthorContextLoads() throws Exception{
         assertThat(authorController).isNotNull();
+    }
+
+    @Test
+    @DisplayName("NewsApp companyController Smoke test")
+    void SmokeTestCompanyContextLoads() throws Exception{
+        assertThat(companyController).isNotNull();
     }
 
     @Test
@@ -57,6 +68,12 @@ public class IbrnewsAppSmokeTest {
     @DisplayName("NewsApp SourceController has Not Null Fields Or Properties")
     void SmokeTestSourceContext() throws Exception{
         assertThat(sourceController).hasNoNullFieldsOrProperties();
+    }
+
+    @Test
+    @DisplayName("NewsApp companyController has Not Null Fields Or Properties")
+    void SmokeTestCompanyContext() throws Exception{
+        assertThat(companyController).hasNoNullFieldsOrProperties();
     }
 
 }

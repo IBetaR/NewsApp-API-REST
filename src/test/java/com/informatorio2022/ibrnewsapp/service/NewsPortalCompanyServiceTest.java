@@ -7,6 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
 import static org.junit.jupiter.api.Assertions.*;
 
 class NewsPortalCompanyServiceTest {
@@ -17,7 +18,6 @@ class NewsPortalCompanyServiceTest {
     public void setUp(){
         service = new NewsPortalCompanyService();
     }
-
 
     @Test
     @DisplayName("Test case - Create a News company. New company crated")
@@ -30,6 +30,14 @@ class NewsPortalCompanyServiceTest {
                 () -> assertEquals(companyDTO.getName(),result.getName()),
                 () -> assertEquals(companyDTO.getCuit(),result.getCuit())
         );
+    }
+
+    @Test
+    @DisplayName("Negative Test case - Create a News company with Null id, name and CUIT")
+    void createCompanyWithNull() {
+        NewsPortalCompanyDTO companyDTO = new NewsPortalCompanyDTO(null,null,null);
+
+        assertThatExceptionOfType(NullPointerException.class);
     }
 
     @Test
@@ -52,7 +60,6 @@ class NewsPortalCompanyServiceTest {
         final NewsPortalCompanyDTO result = service.createCompany(2L, "ASB","4322");
 
         assertEquals(companyDTO2.getId(),result.getId());
-
     }
 
     @Test
