@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface SourceService extends BaseService<Source, Long>{
 
-    List<Source> search(String filter) throws Exception;
-    Page<Source> search(String filter, Pageable pageable) throws Exception;
+    List<Source> search(String search) throws Exception;
+    Page<Source> search(String search, Pageable pageable) throws Exception;
 }

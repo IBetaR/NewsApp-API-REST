@@ -43,5 +43,10 @@
     "name": "BBC-Mundo",
     "code": "BBC-MUNDO",
     "createdAt": "2022-08-15"
+  },
+  {
+    "name": "Criptonoticias.com",
+    "code": "CRIPTONOTICIAS-COM",
+    "createdAt": "2022-08-15"
   }
 ]

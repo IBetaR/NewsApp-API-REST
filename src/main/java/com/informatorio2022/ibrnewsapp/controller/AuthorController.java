@@ -15,21 +15,21 @@ import javax.validation.constraints.NotBlank;
 @RequestMapping("/api/v1/newsapp/authors")
 public class AuthorController extends BaseControllerImpl<Author, AuthorServiceImpl> {
 
-    @GetMapping("search")
+    @GetMapping("/")
     @NotBlank
-    public ResponseEntity<?> search(@RequestParam String filter){
+    public ResponseEntity<?> search(@RequestParam String search){
         try {
-            return ResponseEntity.status(HttpStatus.OK).body(service.search(filter));
+            return ResponseEntity.status(HttpStatus.OK).body(service.search(search));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"Error, NOT FOUND\":\""+e.getMessage()+ ", Búsqueda no encontrada.\"}");
         }
     }
 
-    @GetMapping("searchPaged")
+    @GetMapping("/searchPaged")
     @NotBlank
-    public ResponseEntity<?> search(@RequestParam  String filter, Pageable pageable){
+    public ResponseEntity<?> search(@RequestParam  String search, Pageable pageable){
         try {
-            return ResponseEntity.status(HttpStatus.OK).body(service.search(filter, pageable));
+            return ResponseEntity.status(HttpStatus.OK).body(service.search(search, pageable));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"Error, NOT FOUND\":\""+e.getMessage()+ ", Páginas y búsqueda no encontrada.\"}");
         }

@@ -21,11 +21,11 @@ public class SourceServiceImpl extends BaseServiceImpl<Source, Long> implements 
     }
 
     @Override
-    public List<Source> search(String filter) throws Exception{
+    public List<Source> search(String search) throws Exception{
         try {
-            List<Source> sources = sourceRepository.findByNameContainingOrCodeContaining(filter,filter);
-            //List<Article> articles = articleRepository.search(filter);
-            //List<Article> articles = articleRepository.searchNative(filter);
+            List<Source> sources = sourceRepository.findByNameContainingOrCodeContaining(search,search);
+            //List<Article> articles = articleRepository.search(search);
+            //List<Article> articles = articleRepository.searchNative(search);
             return sources;
         } catch (Exception e) {
             throw new Exception(e.getMessage());
@@ -33,9 +33,9 @@ public class SourceServiceImpl extends BaseServiceImpl<Source, Long> implements 
     }
 
     @Override
-    public Page<Source> search(String filter, Pageable pageable) throws Exception {
+    public Page<Source> search(String search, Pageable pageable) throws Exception {
         try {
-            Page<Source> sources = sourceRepository.findByNameContainingOrCodeContaining(filter,filter, pageable);
+            Page<Source> sources = sourceRepository.findByNameContainingOrCodeContaining(search,search, pageable);
             //Page<Article> articles = articleRepository.search(filter, pageable);
             //Page<Article> articles = articleRepository.searchNative(filter, pageable);
             return sources;

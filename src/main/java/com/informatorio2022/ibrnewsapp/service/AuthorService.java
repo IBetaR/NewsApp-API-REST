@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface AuthorService extends BaseService<Author, Long>{
 
-    List<Author> search(String filter) throws Exception;
-    Page<Author> search(String filter, Pageable pageable) throws Exception;
+    List<Author> search(String search) throws Exception;
+    Page<Author> search(String search, Pageable pageable) throws Exception;
 //    List<Author> findByCreateDateAfter(ZonedDateTime createdDate) throws Exception;
 }

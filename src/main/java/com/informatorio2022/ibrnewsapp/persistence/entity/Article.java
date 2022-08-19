@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.PastOrPresent;
 import java.time.LocalDate;
 
 @Entity
@@ -27,6 +28,7 @@ public class Article extends Base{
     @Column(name = "urlToImage")
     private String urlToImage;
 
+    @PastOrPresent
     @Column(name = "publishedAt")
     private LocalDate publishedAt;
 

@@ -24,13 +24,19 @@ public class ArticleServiceImpl extends BaseServiceImpl<Article, Long> implement
         super(baseRepository);
     }
 
+//    @Override
+//    public List<Article> getAllPublished() {
+//        List<Article> articles = articleRepository.getAllPublished();
+//                return articles;
+//    };
+
     @Override
-    public List<Article> search(String filter) throws Exception{
-        if(filter.length()>=3 && !filter.isBlank()){
+    public List<Article> search(String search) throws Exception{
+        if(search.length()>=3 && !search.isBlank()){
             try {
-                List<Article> articles = articleRepository.findByTitleContainingOrDescriptionContaining(filter,filter);
-                //List<Article> articles = articleRepository.search(filter);
-                //List<Article> articles = articleRepository.searchNative(filter);
+                List<Article> articles = articleRepository.findByTitleContainingOrDescriptionContaining(search,search);
+                //List<Article> articles = articleRepository.search(search);
+                //List<Article> articles = articleRepository.searchNative(search);
                 return articles;
             } catch (Exception e) {
                 throw new Exception(e.getMessage());
@@ -40,10 +46,10 @@ public class ArticleServiceImpl extends BaseServiceImpl<Article, Long> implement
     }
 
     @Override
-    public Page<Article> search(String filter, Pageable pageable) throws Exception {
-        if(filter.length()>=3 && !filter.isBlank()){
+    public Page<Article> search(String search, Pageable pageable) throws Exception {
+        if(search.length()>=3 && !search.isBlank()){
             try {
-                Page<Article> articles = articleRepository.findByTitleContainingOrDescriptionContaining(filter,filter, pageable);
+                Page<Article> articles = articleRepository.findByTitleContainingOrDescriptionContaining(search,search, pageable);
                 //Page<Article> articles = articleRepository.search(filter, pageable);
                 //Page<Article> articles = articleRepository.searchNative(filter, pageable);
                 return articles;

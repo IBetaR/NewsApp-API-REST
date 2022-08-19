@@ -44,9 +44,9 @@ public class BaseControllerImpl<E extends Base, S extends
     }
 
     @PostMapping("")
-    public ResponseEntity<?> save(@RequestBody @NotNull E entity){
+    public ResponseEntity<?> save(@RequestBody @NotNull  E entity){
         try {
-            return ResponseEntity.status(HttpStatus.OK).body(service.save(entity));
+            return ResponseEntity.status(HttpStatus.CREATED).body(service.save(entity));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"BAD REQUEST\":\"Error Por favor revise la request.\"}");
         }
@@ -64,7 +64,7 @@ public class BaseControllerImpl<E extends Base, S extends
     @DeleteMapping("{id}")
     public ResponseEntity<?> delete(@PathVariable Long id){
         try {
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(service.delete(id));
+            return ResponseEntity.status(HttpStatus.OK).body(service.delete(id));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"BAD REQUEST\":\"Error Por favor revise la request.\"}");
         }

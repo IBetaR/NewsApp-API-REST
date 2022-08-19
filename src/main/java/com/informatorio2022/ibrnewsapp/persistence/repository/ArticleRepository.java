@@ -13,6 +13,7 @@ import java.util.List;
 @Repository
 public interface ArticleRepository extends BaseRepository <Article, Long> {
 
+//    List<Article> getAllPublished();
     List<Article> findByTitleContainingOrDescriptionContaining(String title, String description);
     Page<Article> findByTitleContainingOrDescriptionContaining(String name, String description, Pageable pageable);
     public List<Article>  findAllByArticleStatus(ArticleStatus articleStatus);

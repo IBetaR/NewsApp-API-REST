@@ -9,8 +9,9 @@ import java.util.List;
 
 public interface ArticleService extends BaseService <Article, Long>{
 
-    List<Article> search(String filter) throws Exception;
+//    List<Article> getAllPublished();
+    List<Article> search(String search) throws Exception;
     List<Article> findAllByArticleStatus(ArticleStatus articleStatus) throws Exception;
-    Page<Article> search(String filter, Pageable pageable) throws Exception;
+    Page<Article> search(String search, Pageable pageable) throws Exception;
 
 }

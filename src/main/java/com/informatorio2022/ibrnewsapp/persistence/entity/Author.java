@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
@@ -29,6 +30,7 @@ public class Author extends Base{
     @Column(name = "fullname")
     private String fullname;
 
+    @PastOrPresent
     @Column(name = "createdAt")
     private LocalDate createdAt;
 

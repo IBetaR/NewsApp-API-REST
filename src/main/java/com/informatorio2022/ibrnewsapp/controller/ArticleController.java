@@ -7,32 +7,44 @@ import com.informatorio2022.ibrnewsapp.service.ArticleServiceImpl;
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.constraints.NotBlank;
 import java.util.List;
+import java.util.function.Predicate;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("/api/v1/newsapp/articles")
+@RequestMapping(value = "/api/v1/newsapp/articles", produces =  MediaType.APPLICATION_JSON_VALUE)
 public class ArticleController extends BaseControllerImpl <Article, ArticleServiceImpl> {
 
-    @GetMapping("search")
+//    @GetMapping("/")
+//    @NotBlank(message = "No puede haber búsqueda vacía")
+//    public ResponseEntity<?> getAllPublished(){
+//        try {
+//            return ResponseEntity.status(HttpStatus.OK).body(service.findAll().stream().allMatch((Predicate<? super Article>) findAllByArticleStatus(ArticleStatus.valueOf("PUBLISHED"))));
+//        } catch (Exception e) {
+//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"Error\":\""+e.getMessage()+ ", Error en búsqueda.\"}");
+//        }
+//    }
+
+    @GetMapping("/")
     @NotBlank(message = "No puede haber búsqueda vacía")
-    public ResponseEntity<?> search(@RequestParam String filter){
+    public ResponseEntity<?> search(@RequestParam String search){
         try {
-            return ResponseEntity.status(HttpStatus.OK).body(service.search(filter));
+            return ResponseEntity.status(HttpStatus.OK).body(service.search(search));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"Error\":\""+e.getMessage()+ ", Error en búsqueda.\"}");
         }
     }
 
-    @GetMapping("searchPaged")
+    @GetMapping("/searchPaged")
     @NotBlank
-    public ResponseEntity<?> search(@RequestParam String filter, Pageable pageable){
+    public ResponseEntity<?> search(@RequestParam String search, Pageable pageable){
         try {
-            return ResponseEntity.status(HttpStatus.OK).body(service.search(filter, pageable));
+            return ResponseEntity.status(HttpStatus.OK).body(service.search(search, pageable));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"Error\":\""+e.getMessage()+ ", Error en búsqueda.\"}");
         }

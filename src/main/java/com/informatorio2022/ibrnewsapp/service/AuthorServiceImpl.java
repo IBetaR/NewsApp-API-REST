@@ -24,10 +24,10 @@ public class AuthorServiceImpl extends BaseServiceImpl<Author, Long> implements 
     }
 
     @Override
-    public List<Author> search(String filter) throws Exception {
-        if(filter.length()>=3 && !filter.isBlank()){
+    public List<Author> search(String search) throws Exception {
+        if(search.length()>=3 && !search.isBlank()){
             try {
-                List<Author> authors = authorRepository.findByFirstnameContainingOrLastnameContaining(filter,filter);
+                List<Author> authors = authorRepository.findByFirstnameContainingOrLastnameContaining(search,search);
                 //List<Author> authors = authorRepository.search(filter);
                 //List<Author> authors = authorRepository.searchNative(filter);
                 return authors;
@@ -39,10 +39,10 @@ public class AuthorServiceImpl extends BaseServiceImpl<Author, Long> implements 
     }
 
     @Override
-    public Page<Author> search(String filter, Pageable pageable) throws Exception {
-        if(filter.length()>=3 && !filter.isBlank()){
+    public Page<Author> search(String search, Pageable pageable) throws Exception {
+        if(search.length()>=3 && !search.isBlank()){
             try {
-                Page<Author> authors = authorRepository.findByFirstnameContainingOrLastnameContaining(filter,filter, pageable);
+                Page<Author> authors = authorRepository.findByFirstnameContainingOrLastnameContaining(search,search, pageable);
                 //Page<Author> authors = authorRepository.search(filter, pageable);
                 //Page<Author> authors = authorRepository.searchNative(filter, pageable);
                 return authors;
